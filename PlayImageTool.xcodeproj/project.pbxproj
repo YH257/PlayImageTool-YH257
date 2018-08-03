@@ -25,6 +25,20 @@
 		11D3CE2C2113EAD700BA49BF /* XDNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE2B2113EAD300BA49BF /* XDNetRequestClass.m */; };
 		11D3CE31211401FB00BA49BF /* XDSettingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */; };
 		11D3CE34211408BA00BA49BF /* XDMoreCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */; };
+		11D3CE3721142CDD00BA49BF /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE3621142CDD00BA49BF /* UMCommon.framework */; };
+		11D3CE3F21142DD500BA49BF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE3E21142DD500BA49BF /* libsqlite3.tbd */; };
+		11D3CE4121142E0B00BA49BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE4021142E0B00BA49BF /* SystemConfiguration.framework */; };
+		11D3CE4321142E1400BA49BF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE4221142E1400BA49BF /* CoreTelephony.framework */; };
+		11D3CE4521142E3600BA49BF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE4421142E3600BA49BF /* libc++.tbd */; };
+		11D3CE4721142E4000BA49BF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE4621142E4000BA49BF /* libz.tbd */; };
+		11D3CE4921142E5B00BA49BF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE4821142E5A00BA49BF /* Photos.framework */; };
+		11D3CE4C2114449700BA49BF /* XDShareSetFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE4A2114449700BA49BF /* XDShareSetFriendView.m */; };
+		11D3CE4F211445CC00BA49BF /* UIView+syCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE4E211445CC00BA49BF /* UIView+syCategory.m */; };
+		11D3CE5721144DB500BA49BF /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE5521144DB300BA49BF /* libSocialQQ.a */; };
+		11D3CE5B21144DC700BA49BF /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE5921144DC600BA49BF /* libSocialSina.a */; };
+		11D3CE5F21144DDD00BA49BF /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE5D21144DDC00BA49BF /* libSocialWeChat.a */; };
+		11D3CE6121144DE900BA49BF /* UMShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3CE6021144DE900BA49BF /* UMShare.framework */; };
+		11D3CE64211456B200BA49BF /* XDNavigationCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE63211456B200BA49BF /* XDNavigationCtrl.m */; };
 		45D5FEA6D86FE0BF371B909C /* libPods-PlayImageTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */; };
 		A1889BFC21134CFE003AAF87 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BF821134CFE003AAF87 /* ItemCell.m */; };
 		A1889BFD21134CFE003AAF87 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BFA21134CFE003AAF87 /* ItemModel.m */; };
@@ -82,6 +96,26 @@
 		11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSettingCtrl.m; sourceTree = "<group>"; };
 		11D3CE32211408BA00BA49BF /* XDMoreCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDMoreCtrl.h; sourceTree = "<group>"; };
 		11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDMoreCtrl.m; sourceTree = "<group>"; };
+		11D3CE3621142CDD00BA49BF /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		11D3CE3E21142DD500BA49BF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		11D3CE4021142E0B00BA49BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		11D3CE4221142E1400BA49BF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		11D3CE4421142E3600BA49BF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		11D3CE4621142E4000BA49BF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		11D3CE4821142E5A00BA49BF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		11D3CE4A2114449700BA49BF /* XDShareSetFriendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDShareSetFriendView.m; sourceTree = "<group>"; };
+		11D3CE4B2114449700BA49BF /* XDShareSetFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDShareSetFriendView.h; sourceTree = "<group>"; };
+		11D3CE4D211445C100BA49BF /* UIView+syCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+syCategory.h"; sourceTree = "<group>"; };
+		11D3CE4E211445CC00BA49BF /* UIView+syCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+syCategory.m"; sourceTree = "<group>"; };
+		11D3CE5521144DB300BA49BF /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		11D3CE5621144DB400BA49BF /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		11D3CE5921144DC600BA49BF /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		11D3CE5A21144DC700BA49BF /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		11D3CE5D21144DDC00BA49BF /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		11D3CE5E21144DDD00BA49BF /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		11D3CE6021144DE900BA49BF /* UMShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMShare.framework; sourceTree = "<group>"; };
+		11D3CE62211456B200BA49BF /* XDNavigationCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDNavigationCtrl.h; sourceTree = "<group>"; };
+		11D3CE63211456B200BA49BF /* XDNavigationCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDNavigationCtrl.m; sourceTree = "<group>"; };
 		4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayImageTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1889BF821134CFE003AAF87 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		A1889BF921134CFE003AAF87 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
@@ -99,11 +133,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117763AE2112FEA8006C461A /* QuartzCore.framework in Frameworks */,
+				11D3CE4921142E5B00BA49BF /* Photos.framework in Frameworks */,
+				11D3CE5F21144DDD00BA49BF /* libSocialWeChat.a in Frameworks */,
+				11D3CE6121144DE900BA49BF /* UMShare.framework in Frameworks */,
+				11D3CE4721142E4000BA49BF /* libz.tbd in Frameworks */,
+				11D3CE4521142E3600BA49BF /* libc++.tbd in Frameworks */,
+				11D3CE5B21144DC700BA49BF /* libSocialSina.a in Frameworks */,
+				11D3CE3F21142DD500BA49BF /* libsqlite3.tbd in Frameworks */,
+				11D3CE4321142E1400BA49BF /* CoreTelephony.framework in Frameworks */,
+				11D3CE4121142E0B00BA49BF /* SystemConfiguration.framework in Frameworks */,
 				117763AC2112FEA1006C461A /* CoreGraphics.framework in Frameworks */,
+				117763AE2112FEA8006C461A /* QuartzCore.framework in Frameworks */,
 				117763AA2112FE8E006C461A /* Foundation.framework in Frameworks */,
+				11D3CE3721142CDD00BA49BF /* UMCommon.framework in Frameworks */,
 				117763A82112FE85006C461A /* UIKit.framework in Frameworks */,
 				45D5FEA6D86FE0BF371B909C /* libPods-PlayImageTool.a in Frameworks */,
+				11D3CE5721144DB500BA49BF /* libSocialQQ.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +194,7 @@
 		1177636C2112F7B5006C461A /* PlayImageTool */ = {
 			isa = PBXGroup;
 			children = (
+				11D3CE3521142C2F00BA49BF /* youmengSDK */,
 				11D3CE2E211401DC00BA49BF /* subs */,
 				11D3CE292113EABA00BA49BF /* network */,
 				A1889BF721134CED003AAF87 /* view */,
@@ -189,6 +235,12 @@
 		117763A62112FE84006C461A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11D3CE4821142E5A00BA49BF /* Photos.framework */,
+				11D3CE4621142E4000BA49BF /* libz.tbd */,
+				11D3CE4421142E3600BA49BF /* libc++.tbd */,
+				11D3CE4221142E1400BA49BF /* CoreTelephony.framework */,
+				11D3CE4021142E0B00BA49BF /* SystemConfiguration.framework */,
+				11D3CE3E21142DD500BA49BF /* libsqlite3.tbd */,
 				117763AD2112FEA8006C461A /* QuartzCore.framework */,
 				117763AB2112FEA1006C461A /* CoreGraphics.framework */,
 				117763A92112FE8E006C461A /* Foundation.framework */,
@@ -224,12 +276,55 @@
 		11D3CE2E211401DC00BA49BF /* subs */ = {
 			isa = PBXGroup;
 			children = (
+				11D3CE4D211445C100BA49BF /* UIView+syCategory.h */,
+				11D3CE4E211445CC00BA49BF /* UIView+syCategory.m */,
+				11D3CE4B2114449700BA49BF /* XDShareSetFriendView.h */,
+				11D3CE4A2114449700BA49BF /* XDShareSetFriendView.m */,
 				11D3CE2F211401FB00BA49BF /* XDSettingCtrl.h */,
 				11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */,
 				11D3CE32211408BA00BA49BF /* XDMoreCtrl.h */,
 				11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */,
 			);
 			path = subs;
+			sourceTree = "<group>";
+		};
+		11D3CE3521142C2F00BA49BF /* youmengSDK */ = {
+			isa = PBXGroup;
+			children = (
+				11D3CE6021144DE900BA49BF /* UMShare.framework */,
+				11D3CE5C21144DCB00BA49BF /* WeChat */,
+				11D3CE5821144DB900BA49BF /* Sina */,
+				11D3CE5421144D9A00BA49BF /* QQ */,
+				11D3CE3621142CDD00BA49BF /* UMCommon.framework */,
+			);
+			path = youmengSDK;
+			sourceTree = "<group>";
+		};
+		11D3CE5421144D9A00BA49BF /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				11D3CE5521144DB300BA49BF /* libSocialQQ.a */,
+				11D3CE5621144DB400BA49BF /* UMSocialQQHandler.h */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		11D3CE5821144DB900BA49BF /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				11D3CE5921144DC600BA49BF /* libSocialSina.a */,
+				11D3CE5A21144DC700BA49BF /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		11D3CE5C21144DCB00BA49BF /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				11D3CE5D21144DDC00BA49BF /* libSocialWeChat.a */,
+				11D3CE5E21144DDD00BA49BF /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
 			sourceTree = "<group>";
 		};
 		939B2CEB6CC3E318DA80CEB8 /* Pods */ = {
@@ -248,6 +343,8 @@
 				A1889BF821134CFE003AAF87 /* ItemCell.m */,
 				A1889BF921134CFE003AAF87 /* ItemModel.h */,
 				A1889BFA21134CFE003AAF87 /* ItemModel.m */,
+				11D3CE62211456B200BA49BF /* XDNavigationCtrl.h */,
+				11D3CE63211456B200BA49BF /* XDNavigationCtrl.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -408,10 +505,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlayImageTool/Pods-PlayImageTool-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD-0.8.1/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -429,9 +528,12 @@
 				11D3CE31211401FB00BA49BF /* XDSettingCtrl.m in Sources */,
 				117763B52112FF92006C461A /* ImageUtil.m in Sources */,
 				A1889C0521134D81003AAF87 /* ViewController.m in Sources */,
+				11D3CE64211456B200BA49BF /* XDNavigationCtrl.m in Sources */,
 				11D3CE2C2113EAD700BA49BF /* XDNetRequestClass.m in Sources */,
 				A1889BFC21134CFE003AAF87 /* ItemCell.m in Sources */,
 				1177637D2112F7B9006C461A /* main.m in Sources */,
+				11D3CE4C2114449700BA49BF /* XDShareSetFriendView.m in Sources */,
+				11D3CE4F211445CC00BA49BF /* UIView+syCategory.m in Sources */,
 				117763B42112FF92006C461A /* ImageProcessingViewController.m in Sources */,
 				A1889BFD21134CFE003AAF87 /* ItemModel.m in Sources */,
 				1177636F2112F7B5006C461A /* AppDelegate.m in Sources */,
@@ -599,11 +701,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R868642T38;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PlayImageTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/QQ",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/Sina",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/WeChat",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Atrialnetwork.PlayImageTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,11 +731,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R868642T38;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PlayImageTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/QQ",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/Sina",
+					"$(PROJECT_DIR)/PlayImageTool/youmengSDK/WeChat",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Atrialnetwork.PlayImageTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";

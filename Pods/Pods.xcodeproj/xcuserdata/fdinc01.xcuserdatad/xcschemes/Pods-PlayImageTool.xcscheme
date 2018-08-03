@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEC8CBB34CD593701567942F9BEDC022"
+               BlueprintIdentifier = "7C879FA10118AD668F9A9F03338C5A67"
                BlueprintName = "Pods-PlayImageTool"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-PlayImageTool.a">

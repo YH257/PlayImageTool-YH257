@@ -13,8 +13,12 @@
 #import <CHTCollectionViewWaterfallLayout.h>
 #import "ImageProcessingViewController.h"
 #import "RequestUrlCommon.h"
+#import "XDSettingCtrl.h"
+#import "ImageUtil.h"
 
-@interface ViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
+@interface ViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>{
+    UIImagePickerController *imagePickerController;
+}
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -73,18 +77,138 @@
 
 #pragma mark - pushSetVc
 -(void)pushSetVc {
-    
+    XDSettingCtrl *vc = [[XDSettingCtrl alloc] init];
+   
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)pushAddVc {
     
+     UIActionSheet *ac = nil;
+     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+     {
+     ac = [[UIActionSheet alloc] initWithTitle:@"-Photo Source-"
+     delegate:self
+     cancelButtonTitle:@"Cancel"
+     destructiveButtonTitle:nil
+     otherButtonTitles:@"Photo Lib",@"Camera",nil];
+     }
+     else
+     {
+     ac = [[UIActionSheet alloc] initWithTitle:@"-Photo Source-"
+     delegate:self
+     cancelButtonTitle:@"Cancel"
+     destructiveButtonTitle:nil
+     otherButtonTitles:@"Photo Lib",nil];
+     }
+     ac.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+     [ac showInView:self.view];
     
+}
+
+#pragma mark - 图片获取
+
+#pragma mark -
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        if(buttonIndex == 0)
+        {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentModalViewController:imagePickerController animated:YES];
+        }
+        if(buttonIndex == 1)
+        {
+            UIView *cameraView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)];
+            cameraView.backgroundColor = [UIColor clearColor];
+            cameraView.autoresizesSubviews = YES;
+            
+            UIView *bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, cameraView.frame.size.height-53.0, cameraView.frame.size.width, 53.0)];
+            bottomBar.backgroundColor = [UIColor whiteColor];
+            bottomBar.autoresizesSubviews = YES;
+            
+            UIButton *snapBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [snapBtn setTitle:@"Snap" forState:UIControlStateNormal];
+            snapBtn.frame = CGRectMake(5.0, 9.0, 60.0, 33.0);
+            [snapBtn addTarget:self action:@selector(snap:) forControlEvents:UIControlEventTouchUpInside];
+            
+            UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [closeBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+            closeBtn.frame = CGRectMake(bottomBar.frame.size.width-60.0-5.0, 9.0, 60.0, 33.0);
+            [closeBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [bottomBar addSubview:snapBtn];
+            [bottomBar addSubview:closeBtn];
+            
+            [cameraView addSubview:bottomBar];
+            
+            
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePickerController.showsCameraControls = NO;
+            imagePickerController.cameraOverlayView = cameraView;
+            
+            [self presentModalViewController:imagePickerController animated:YES];
+        }
+    }
+    else
+    {
+        if(buttonIndex == 0)
+        {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentModalViewController:imagePickerController animated:YES];
+        }
+    }
+}
+
+#pragma mark -
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:@"public.image"])
+    {
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        NSLog(@"found an image");
+        
+        ImageProcessingViewController *vc = [[ImageProcessingViewController alloc] init];
+        
+        vc.imgData = image;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+-(void)snap:(id)sender
+{
+    if(imagePickerController)
+    {
+        [imagePickerController takePicture];
+    }
+}
+
+-(void)close:(id)sender
+{
+    if(imagePickerController)
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
 
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated {

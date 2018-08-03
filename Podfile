@@ -6,5 +6,6 @@ target 'PlayImageTool' do
     pod 'AFNetworking','~> 3.1.0'
     pod 'SDWebImage','~> 4.0.0'
     pod 'MJRefresh'
+    pod 'SVProgressHUD-0.8.1', '~> 0.8'
 
 end

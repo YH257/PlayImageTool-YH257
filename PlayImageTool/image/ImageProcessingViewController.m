@@ -8,6 +8,9 @@
 
 #import "ImageProcessingViewController.h"
 #import "ImageUtil.h"
+#import <UMShare/UMShare.h>
+#import "XDShareSetFriendView.h"
+#import "SVProgressHUD.h"
 
 @implementation ProcessingImageView
 @synthesize delegate;
@@ -73,30 +76,8 @@
 #pragma mark -
 -(IBAction)begin:(id)sender
 {
-    
     [self.navigationController popViewControllerAnimated:YES];
     
-    /*
-	UIActionSheet *ac = nil;
-	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-	{
-		ac = [[UIActionSheet alloc] initWithTitle:@"-Photo Source-" 
-																		 delegate:self 
-														cancelButtonTitle:@"Cancel" 
-											 destructiveButtonTitle:nil 
-														otherButtonTitles:@"Photo Lib",@"Camera",nil];
-	}
-	else 
-	{
-		ac = [[UIActionSheet alloc] initWithTitle:@"-Photo Source-" 
-																		 delegate:self 
-														cancelButtonTitle:@"Cancel" 
-											 destructiveButtonTitle:nil 
-														otherButtonTitles:@"Photo Lib",nil];
-	}
-	ac.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[ac showInView:self.view];
-     */
 }
 
 -(IBAction)effectChange:(id)sender
@@ -146,12 +127,86 @@
 
 -(IBAction)save:(id)sender
 {
+    
+    XDShareSetFriendView *popView = [[XDShareSetFriendView alloc] initWithSelecetButtonBlock:^(NSInteger index) {
+        [self shareSDKMethod:index];
+    }];
+    [popView showPopView];
+    return;
+    
 	if(self.imageV.image)
 	{
 		self.saveItem.enabled = NO;
 		UIImageWriteToSavedPhotosAlbum(self.imageV.image, self,@selector(image:didFinishSavingWithError:contextInfo:),NULL); 
 	}
 }
+
+
+#pragma mark - 分享图片
+
+
+-(void)shareSDKMethod:(NSInteger)index {
+    
+//    UMSocialPlatformType_WechatSession      = 1, //微信聊天
+//    UMSocialPlatformType_WechatTimeLine     = 2,//微信朋友圈
+//    UMSocialPlatformType_WechatFavorite
+    
+    if (index == 0) {
+         [self addShareContent:UMSocialPlatformType_WechatSession];
+    } else if (index == 1) {
+        [self addShareContent:UMSocialPlatformType_WechatTimeLine];
+        
+    } else if (index == 2) {
+        [self addShareContent:UMSocialPlatformType_Sina];
+        
+    } else if (index == 3) {
+        
+        [self addShareContent:UMSocialPlatformType_QQ];
+    }else if (index == 4) {
+        
+        [self addShareContent:UMSocialPlatformType_Qzone];
+    }
+}
+
+//添加分享的内容
+- (void)addShareContent:(UMSocialPlatformType)platformType{
+    
+    UMShareImageObject *imgObject = [[UMShareImageObject alloc] init];
+    imgObject.shareImage = self.imageV.image;
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    messageObject.shareObject = imgObject;
+
+//
+//    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@", @""];
+//    //创建分享消息对象
+//    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+//    if (platformType == UMSocialPlatformType_Sina) {
+//        messageObject.text = [NSString stringWithFormat:@"我正在使用客靠经纪端APP。着手帮助经纪人解决房源、客源、提升业务技能的问题，提供全方位、多角度的经纪服务 %@",urlStr];//文本和url放在text里
+//        messageObject.title = @"客靠经纪端";
+//    }
+//
+//    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"客靠经济端" descr:@"我正在使用客靠经纪端APP。着手帮助经纪人解决房源、客源、提升业务技能的问题，提供全方位、多角度的经纪服务" thumImage:[UIImage imageNamed:@"Icon"]];
+//    shareObject.webpageUrl = urlStr;
+//    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            if (error.code == 2008) {
+                //应用未安装
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD showErrorWithStatus:@"该应用未安装"];
+                });
+            }
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
+        }
+    }];
+}
+
+
+
 
 -(void)snap:(id)sender
 {
@@ -190,83 +245,5 @@
 	show = !show;
 }
 
-#pragma mark -
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	imagePickerController = [[UIImagePickerController alloc] init];
-	imagePickerController.delegate = self;
-	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-	{
-		if(buttonIndex == 0)
-		{
-			imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-			[self presentModalViewController:imagePickerController animated:YES];
-		}
-		if(buttonIndex == 1) 
-		{
-			UIView *cameraView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)];
-			cameraView.backgroundColor = [UIColor clearColor];
-			cameraView.autoresizesSubviews = YES;
-			
-			UIView *bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, cameraView.frame.size.height-53.0, cameraView.frame.size.width, 53.0)];
-			bottomBar.backgroundColor = [UIColor whiteColor];
-			bottomBar.autoresizesSubviews = YES;
-			
-			UIButton *snapBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-			[snapBtn setTitle:@"Snap" forState:UIControlStateNormal];
-			snapBtn.frame = CGRectMake(5.0, 9.0, 60.0, 33.0);
-			[snapBtn addTarget:self action:@selector(snap:) forControlEvents:UIControlEventTouchUpInside];
-			
-			UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-			[closeBtn setTitle:@"Cancel" forState:UIControlStateNormal];
-			closeBtn.frame = CGRectMake(bottomBar.frame.size.width-60.0-5.0, 9.0, 60.0, 33.0);
-			[closeBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
-			
-			[bottomBar addSubview:snapBtn];
-			[bottomBar addSubview:closeBtn];
-			
-			[cameraView addSubview:bottomBar];
-			
-			
-			imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-			imagePickerController.showsCameraControls = NO;
-			imagePickerController.cameraOverlayView = cameraView;
-			
-			[self presentModalViewController:imagePickerController animated:YES];
-		}
-	}
-	else 
-	{
-		if(buttonIndex == 0)
-		{
-			imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-			[self presentModalViewController:imagePickerController animated:YES];
-		}
-	}
-}
 
-#pragma mark -
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-	NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-	if ([mediaType isEqualToString:@"public.image"])
-	{
-		UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-		NSLog(@"found an image");
-		
-		UIImage *resizedImg = [ImageUtil image:image fitInSize:CGSizeMake(320.0, 480.0)];
-		currentImage = [resizedImg copy];
-		self.imageV.image = resizedImg;
-	}
-	//picker.cameraViewTransform = CGAffineTransformIdentity;
-	
-	[self.segc setSelectedSegmentIndex:0];
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-	
-	[self dismissModalViewControllerAnimated:YES];
-}
 @end
