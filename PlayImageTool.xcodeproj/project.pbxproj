@@ -24,6 +24,7 @@
 		117763B9211301DF006C461A /* ImageProcessingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117763B8211301DF006C461A /* ImageProcessingViewController.xib */; };
 		11D3CE2C2113EAD700BA49BF /* XDNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE2B2113EAD300BA49BF /* XDNetRequestClass.m */; };
 		11D3CE31211401FB00BA49BF /* XDSettingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */; };
+		11D3CE34211408BA00BA49BF /* XDMoreCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */; };
 		45D5FEA6D86FE0BF371B909C /* libPods-PlayImageTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */; };
 		A1889BFC21134CFE003AAF87 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BF821134CFE003AAF87 /* ItemCell.m */; };
 		A1889BFD21134CFE003AAF87 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BFA21134CFE003AAF87 /* ItemModel.m */; };
@@ -79,6 +80,8 @@
 		11D3CE2D2113EAF300BA49BF /* RequestUrlCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrlCommon.h; sourceTree = "<group>"; };
 		11D3CE2F211401FB00BA49BF /* XDSettingCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSettingCtrl.h; sourceTree = "<group>"; };
 		11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSettingCtrl.m; sourceTree = "<group>"; };
+		11D3CE32211408BA00BA49BF /* XDMoreCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDMoreCtrl.h; sourceTree = "<group>"; };
+		11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDMoreCtrl.m; sourceTree = "<group>"; };
 		4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayImageTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1889BF821134CFE003AAF87 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		A1889BF921134CFE003AAF87 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 			children = (
 				11D3CE2F211401FB00BA49BF /* XDSettingCtrl.h */,
 				11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */,
+				11D3CE32211408BA00BA49BF /* XDMoreCtrl.h */,
+				11D3CE33211408BA00BA49BF /* XDMoreCtrl.m */,
 			);
 			path = subs;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				117763B42112FF92006C461A /* ImageProcessingViewController.m in Sources */,
 				A1889BFD21134CFE003AAF87 /* ItemModel.m in Sources */,
 				1177636F2112F7B5006C461A /* AppDelegate.m in Sources */,
+				11D3CE34211408BA00BA49BF /* XDMoreCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
