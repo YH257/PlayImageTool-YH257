@@ -23,6 +23,7 @@
 		117763B72112FF99006C461A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 117763B62112FF99006C461A /* Icon.png */; };
 		117763B9211301DF006C461A /* ImageProcessingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117763B8211301DF006C461A /* ImageProcessingViewController.xib */; };
 		11D3CE2C2113EAD700BA49BF /* XDNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE2B2113EAD300BA49BF /* XDNetRequestClass.m */; };
+		11D3CE31211401FB00BA49BF /* XDSettingCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */; };
 		45D5FEA6D86FE0BF371B909C /* libPods-PlayImageTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */; };
 		A1889BFC21134CFE003AAF87 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BF821134CFE003AAF87 /* ItemCell.m */; };
 		A1889BFD21134CFE003AAF87 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1889BFA21134CFE003AAF87 /* ItemModel.m */; };
@@ -76,6 +77,8 @@
 		11D3CE2A2113EAD200BA49BF /* XDNetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDNetRequestClass.h; sourceTree = "<group>"; };
 		11D3CE2B2113EAD300BA49BF /* XDNetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDNetRequestClass.m; sourceTree = "<group>"; };
 		11D3CE2D2113EAF300BA49BF /* RequestUrlCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrlCommon.h; sourceTree = "<group>"; };
+		11D3CE2F211401FB00BA49BF /* XDSettingCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSettingCtrl.h; sourceTree = "<group>"; };
+		11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSettingCtrl.m; sourceTree = "<group>"; };
 		4A48ED5A9E60C88E862DF179 /* libPods-PlayImageTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayImageTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1889BF821134CFE003AAF87 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		A1889BF921134CFE003AAF87 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		1177636C2112F7B5006C461A /* PlayImageTool */ = {
 			isa = PBXGroup;
 			children = (
+				11D3CE2E211401DC00BA49BF /* subs */,
 				11D3CE292113EABA00BA49BF /* network */,
 				A1889BF721134CED003AAF87 /* view */,
 				117763AF2112FF79006C461A /* image */,
@@ -212,6 +216,15 @@
 				11D3CE2B2113EAD300BA49BF /* XDNetRequestClass.m */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		11D3CE2E211401DC00BA49BF /* subs */ = {
+			isa = PBXGroup;
+			children = (
+				11D3CE2F211401FB00BA49BF /* XDSettingCtrl.h */,
+				11D3CE30211401FB00BA49BF /* XDSettingCtrl.m */,
+			);
+			path = subs;
 			sourceTree = "<group>";
 		};
 		939B2CEB6CC3E318DA80CEB8 /* Pods */ = {
@@ -408,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				117763A32112FD1B006C461A /* TouchMoveScaleView.m in Sources */,
+				11D3CE31211401FB00BA49BF /* XDSettingCtrl.m in Sources */,
 				117763B52112FF92006C461A /* ImageUtil.m in Sources */,
 				A1889C0521134D81003AAF87 /* ViewController.m in Sources */,
 				11D3CE2C2113EAD700BA49BF /* XDNetRequestClass.m in Sources */,
